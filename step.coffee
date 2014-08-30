@@ -8,7 +8,6 @@ class $blab.Etdrk4
     # helper functions
     zeros = (x) -> nm.zeros(1, x.length)[0]  # Zero vector same length as x
     r2c = (x) -> complex x, zeros(x)  # Real to complex (for fft input)
-    #@fft = (x) -> r2c(x).fft()
     ifftRe = (x) -> x.ifft().x  # Real part of ifft 
     
     constructor: (@spec) ->
