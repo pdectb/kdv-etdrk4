@@ -1,60 +1,35 @@
-== BSO equation notes ==
 
 <div id="text">
 
-<div id="right_col">
+  <div id="left_col">
 
-$$
-u_t+uu_x+u_{xxx}=\varepsilon\left( u-bu_{xx} \right)
-$$
+    left
 
-$$
-u(t,x)=u(t,x+2\pi)
-$$
+  </div>
 
-$$
-\int_0^{2\pi} u(t,x)~dx = 0
-$$
-</div>
+  <div id="right_col">
 
-<div id="left_col">
+    right
 
-The system on the right has [http://en.wikipedia.org/wiki/Cnoidal_wave, cnoidal]
-attractors -- providing $\varepsilon$ is not too large
-(around 1/16 is OK). Small $\varepsilon$ allows the KdV dynamics to dominate, so that
-tall pulses are narrow. Narrow pulses are penalized by $u_{xx}$ term,
-thus the loss increases as pulse amplitude grows---which tends to stabilize the
-system.
+  </div>
 
+  <div id="clear"></div>
 
-</div>
+  <span id="kdv-start-button" class="text-button">click to
+  start</span>
 
-<div id="clear"></div>
+  <span id="kdv-stop-button" class="text-button">click to
+  stop</span>
 
-Parameter $b$ sets the ratio between the gain (from the $u$ on the RHS) and 
-loss ($u_{xx}$) -- and thus the amplitude of the cnoidal steady state.
+  <div id="clear"></div>
 
-The integral constraint (that $u$ has zero mean) prevents a low frequency 
-instability (there is gain, but no loss at DC). 
-In the code the F.T. of $u$ (i.e., v) is simply zeroed at each step.
+  <div id="graph_container">
 
-Note also that there is an instability at the Nyquist wavenumber. Not sure why.
-Perhaps there is less loss from $u_{xx}$ at that frequency because the system 
-is discrete in $x$. Fix by setting v(N/2+1)=0 in code below.
-
-With $\varepsilon=1/16$ and $b=0.2$ the system (after simulating (elsewhere, in Octave) from
-a random I.C. to $t\approx 2000$ with h=2e-6) appears attracted to a 2-cnoidal 
-solution with peak pulse amplitudes of approximately 25 and 60. *See below*.
-
-With large $\epsilon$ (say $\epsilon=16$) the system seems to converge rapidly
-to a steady-state, but is ultimately unstable. I think this is because
-the KdV dynamics cannot sharpen the signal sufficiently quickly for
-the $u_{xx}$ term to provide a stabilizing influence.
-
-
-GJB
+    <div id="solitons"></div>
+    <div id="instruct">Click two coordinates to initialize solitons and restart simulation.</div>
+  
+  </div>
 
 </div>
 
-<!--puzlet_end--> (html)
 

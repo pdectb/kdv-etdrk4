@@ -1,6 +1,7 @@
 [
     "/puzlet/js/d3.min.js",
-    "http://puzlet.org/line-chart/main.js",
+    "http://localhost:8080/puzlet/line-chart/main.coffee",
+    "step.coffee",
     "main.html",
     "main.css",
     "main.coffee"
