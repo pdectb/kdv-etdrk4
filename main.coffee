@@ -1,8 +1,8 @@
-# Soliton
+# Soliton.
 sech = (x) -> 2 / (exp(x) + exp(-x))
 soliton = (A, x1, x) -> A * (sech(sqrt(A/12)*(x+x1))).pow(2)
 
-# Grid and initial condition
+# Grid and initial condition.
 N = 256
 x = 2*pi/N * linspace(-N/2, N/2-1, N) #;
 u0 = soliton(800, 1, x)+soliton(200, 0, x) #;
@@ -21,7 +21,7 @@ etdrk4 = new $blab.Etdrk4
     N: 256
     h: 4e-5
     M: 64 # no. pts for complex means
-    dispersion: (z) -> j*z.pow(3)
+    dispersion: (z) -> j*z.pow(3) # KdV uxxx.
 
 # Evolve initial condition
 v = etdrk4.fft u0 #;
