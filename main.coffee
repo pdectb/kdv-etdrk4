@@ -21,7 +21,7 @@ etdrk4 = new $blab.Etdrk4
     N: 256
     h: 4e-5
     M: 64 # no. pts for complex means
-    dispersion: (z) -> j*z.pow(3) # KdV uxxx.
+    dispersion: (z) -> j*z.pow(3) # KdV dispersion.
 
 # Evolve initial condition
 v = etdrk4.fft u0 #;
